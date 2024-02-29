@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Neg Short",
+    "prompt": "{prompt}",
+    "negative_prompt": "blurry, deformed, distorted, grainy, noisy, ugly, vague"
+  },
+  {
+    "name": "Neg Long",
+    "prompt": "{prompt}",
+    "negative_prompt": "lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, dehydrated, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature"
+  },
+  {
+    "name": "Pos Short",
+    "prompt": "{prompt} beautiful, concept art, 8k, hyper realistic, octane render, trending on artstation",
+    "negative_prompt": "blurry, deformed, distorted, grainy, noisy, ugly, vague"
+  },
+  {
+    "name": "Pos Short no Neg",
+    "prompt": "{prompt} beautiful, concept art, 8k, hyper realistic, octane render, trending on artstation",
+    "negative_prompt": ""
+  },
+  {
+    "name": "Pos Long",
+    "prompt": "{prompt} beautiful, cinematic, colorful background, concept art, 8k, dramatic lighting, high detail, highly detailed, hyper realistic, intricate, intricate sharp details, octane render, smooth, studio lighting, trending on artstation",
+    "negative_prompt": "blurry, deformed, distorted, grainy, noisy, ugly, vague"
+  },
+  {
+    "name": "Pos Long no Neg",
+    "prompt": "{prompt} beautiful, cinematic, colorful background, concept art, 8k, dramatic lighting, high detail, highly detailed, hyper realistic, intricate, intricate sharp details, octane render, smooth, studio lighting, trending on artstation",
+    "negative_prompt": ""
+  },
+  {
+    "name": "art anime",
+    "prompt": "anime masterpiece {prompt} detailed contrast",
+    "negative_prompt": "photo ugly deformed distorted noisy blurry grainy vague"
+  },
+  {
+    "name": "art charcoal",
+    "prompt": "rough charcoal sketch wash {prompt} artistic",
+    "negative_prompt": "anime photo cinematic"
+  },
+  {
+    "name": "art watercolor",
+    "prompt": "watercolor painting {prompt} wet wash rough artistic",
+    "negative_prompt": "anime photo cinematic"
+  },
+  {
+    "name": "photo",
+    "prompt": "sharp photograph {prompt} ultra-high-detailed",
+    "negative_prompt": "anime cartoon graphic text painting crayon graphite abstract ugly deformed distorted noisy blurry vague"
+  },
+  {
+    "name": "photo cinematic",
+    "prompt": "cinematic film still {prompt} sharp focus mood epic beautiful detailed bokeh vignette gorgeous filmgrain",
+    "negative_prompt": "anime cartoon graphic text painting crayon graphite abstract ugly deformed distorted noisy blurry vague"
+  },
+  {
+    "name": "photo portrait",
+    "prompt": "50mm portrait photo {prompt} bokeh studio professional lighting ultra-high-detailed",
+    "negative_prompt": "anime cartoon graphic text painting crayon graphite abstract ugly deformed distorted noisy blurry vague"
+  }
+]

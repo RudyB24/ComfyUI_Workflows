@@ -1,0 +1,1752 @@
+{
+  "last_node_id": 144,
+  "last_link_id": 311,
+  "nodes": [
+    {
+      "id": 80,
+      "type": "PrepImageForClipVision",
+      "pos": [
+        900,
+        230
+      ],
+      "size": {
+        "0": 380,
+        "1": 110
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 186
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            191
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PrepImageForClipVision"
+      },
+      "widgets_values": [
+        "LANCZOS",
+        "center",
+        0.2
+      ],
+      "shape": 1
+    },
+    {
+      "id": 72,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        900,
+        30
+      ],
+      "size": {
+        "0": 380,
+        "1": 60
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            153
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "CLIP-ViT-H-14.safetensors"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 71,
+      "type": "IPAdapterModelLoader",
+      "pos": [
+        900,
+        130
+      ],
+      "size": {
+        "0": 380,
+        "1": 60
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IPADAPTER",
+          "type": "IPADAPTER",
+          "links": [
+            152
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "IPAdapter",
+      "properties": {
+        "Node name for S&R": "IPAdapterModelLoader"
+      },
+      "widgets_values": [
+        "XL ip adapter plus vit-H.safetensors"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 88,
+      "type": "ttN pipeLoader",
+      "pos": [
+        500,
+        590
+      ],
+      "size": {
+        "0": 380,
+        "1": 570
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_override",
+          "type": "MODEL",
+          "link": null
+        },
+        {
+          "name": "clip_override",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "optional_lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 211,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 212,
+          "widget": {
+            "name": "negative"
+          }
+        },
+        {
+          "name": "empty_latent_width",
+          "type": "INT",
+          "link": 214,
+          "widget": {
+            "name": "empty_latent_width"
+          }
+        },
+        {
+          "name": "empty_latent_height",
+          "type": "INT",
+          "link": 213,
+          "widget": {
+            "name": "empty_latent_height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            209
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            215
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ttN pipeLoader",
+        "ttNnodeVersion": "1.1.2"
+      },
+      "widgets_values": [
+        "XL GEN Dreamshaper a2.safetensors",
+        "Default",
+        "Baked VAE",
+        0,
+        "None",
+        1,
+        1,
+        "None",
+        0.72,
+        1,
+        "None",
+        1,
+        1,
+        "Positive",
+        "none",
+        "comfy",
+        "Negative",
+        "none",
+        "comfy",
+        512,
+        512,
+        1,
+        0,
+        "fixed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 46,
+      "type": "SDXLAspectRatio",
+      "pos": [
+        100,
+        470
+      ],
+      "size": {
+        "0": 380,
+        "1": 130
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Width",
+          "type": "INT",
+          "links": [
+            214
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Height",
+          "type": "INT",
+          "links": [
+            213
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "title": "IPAdapter",
+      "properties": {
+        "Node name for S&R": "SDXLAspectRatio"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        " 896 x 1152"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 68,
+      "type": "SDXLPromptStyler",
+      "pos": [
+        100,
+        640
+      ],
+      "size": {
+        "0": 380,
+        "1": 520
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "text_positive",
+          "type": "STRING",
+          "links": [
+            211
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "text_negative",
+          "type": "STRING",
+          "links": [
+            212
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SDXLPromptStyler"
+      },
+      "widgets_values": [
+        "cyborg",
+        "",
+        "futuristic-biomechanical",
+        false,
+        true,
+        true
+      ],
+      "shape": 1
+    },
+    {
+      "id": 73,
+      "type": "IPAdapterApply",
+      "pos": [
+        900,
+        380
+      ],
+      "size": {
+        "0": 380,
+        "1": 260
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ipadapter",
+          "type": "IPADAPTER",
+          "link": 152
+        },
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 153
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 191
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 215
+        },
+        {
+          "name": "attn_mask",
+          "type": "MASK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            216
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IPAdapterApply"
+      },
+      "widgets_values": [
+        0.3,
+        0,
+        "original",
+        0,
+        1,
+        false
+      ],
+      "shape": 1
+    },
+    {
+      "id": 74,
+      "type": "LoadImage",
+      "pos": [
+        900,
+        680
+      ],
+      "size": {
+        "0": 380,
+        "1": 480
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            186
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "cyborg.jpg",
+        "image"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 133,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        2900,
+        200
+      ],
+      "size": {
+        "0": 380,
+        "1": 60
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            289
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x GEN UltraSharp.pth"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 134,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        2900,
+        300
+      ],
+      "size": {
+        "0": 380,
+        "1": 50
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 289
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 290
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            294
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      },
+      "shape": 1
+    },
+    {
+      "id": 135,
+      "type": "ttN imageOutput",
+      "pos": [
+        2500,
+        590
+      ],
+      "size": {
+        "0": 380,
+        "1": 570
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 291
+        },
+        {
+          "name": "save_prefix",
+          "type": "STRING",
+          "link": 308,
+          "widget": {
+            "name": "save_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Workflow PNG 512",
+      "properties": {
+        "Node name for S&R": "ttN imageOutput",
+        "ttNnodeVersion": "1.1.0"
+      },
+      "widgets_values": [
+        "Save",
+        "D:\\AI\\ComfyUI\\output",
+        "RB",
+        3,
+        "PNG",
+        "True",
+        "True"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 136,
+      "type": "ttN imageOutput",
+      "pos": [
+        2900,
+        590
+      ],
+      "size": {
+        "0": 380,
+        "1": 570
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 292
+        },
+        {
+          "name": "save_prefix",
+          "type": "STRING",
+          "link": 309,
+          "widget": {
+            "name": "save_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            295
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Final Upscaled Image JPG",
+      "properties": {
+        "Node name for S&R": "ttN imageOutput",
+        "ttNnodeVersion": "1.1.0"
+      },
+      "widgets_values": [
+        "Save",
+        "D:\\AI\\ComfyUI\\output",
+        "RB",
+        3,
+        "JPG",
+        "True",
+        "False"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 137,
+      "type": "ConstrainImage|pysssss",
+      "pos": [
+        2500,
+        390
+      ],
+      "size": {
+        "0": 380,
+        "1": 160
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 293
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            291
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConstrainImage|pysssss"
+      },
+      "widgets_values": [
+        512,
+        2160,
+        512,
+        512,
+        "no"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 138,
+      "type": "ConstrainImage|pysssss",
+      "pos": [
+        2900,
+        390
+      ],
+      "size": {
+        "0": 380,
+        "1": 160
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 294
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            292
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConstrainImage|pysssss"
+      },
+      "widgets_values": [
+        3840,
+        2160,
+        512,
+        512,
+        "no"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 139,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        2900,
+        50
+      ],
+      "size": {
+        "0": 380,
+        "1": 110
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 295
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "always",
+        1,
+        "notify.mp3"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 140,
+      "type": "Reroute",
+      "pos": [
+        2740,
+        320
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 310,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 1
+    },
+    {
+      "id": 141,
+      "type": "Reroute",
+      "pos": [
+        2740,
+        290
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 296,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            290
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 1
+    },
+    {
+      "id": 142,
+      "type": "SAMLoader",
+      "pos": [
+        2100,
+        40
+      ],
+      "size": {
+        "0": 380,
+        "1": 82
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SAM_MODEL",
+          "type": "SAM_MODEL",
+          "links": [
+            304
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SAMLoader"
+      },
+      "widgets_values": [
+        "sam_vit_b_01ec64.pth",
+        "AUTO"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 143,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        2100,
+        160
+      ],
+      "size": {
+        "0": 380,
+        "1": 80
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": [
+            303
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "bbox/face_yolov8m.pt"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 144,
+      "type": "FaceDetailer",
+      "pos": [
+        2100,
+        280
+      ],
+      "size": {
+        "0": 380,
+        "1": 880
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 297
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 298,
+          "slot_index": 1
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 299
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 300
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 301
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 302
+        },
+        {
+          "name": "bbox_detector",
+          "type": "BBOX_DETECTOR",
+          "link": 303
+        },
+        {
+          "name": "sam_model_opt",
+          "type": "SAM_MODEL",
+          "link": 304
+        },
+        {
+          "name": "segm_detector_opt",
+          "type": "SEGM_DETECTOR",
+          "link": null
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            293,
+            296
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "cropped_refined",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        },
+        {
+          "name": "cropped_enhanced_alpha",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "detailer_pipe",
+          "type": "DETAILER_PIPE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cnet_images",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceDetailer"
+      },
+      "widgets_values": [
+        512,
+        true,
+        768,
+        0,
+        "fixed",
+        24,
+        6,
+        "dpmpp_2m",
+        "karras",
+        0.5,
+        5,
+        true,
+        true,
+        0.5,
+        10,
+        3,
+        "center-1",
+        0,
+        0.93,
+        0,
+        0.7,
+        "False",
+        10,
+        "",
+        1,
+        false,
+        10
+      ],
+      "shape": 1
+    },
+    {
+      "id": 89,
+      "type": "ttN pipeKSampler",
+      "pos": [
+        1300,
+        330
+      ],
+      "size": {
+        "0": 380,
+        "1": 830
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 209
+        },
+        {
+          "name": "optional_model",
+          "type": "MODEL",
+          "link": 216
+        },
+        {
+          "name": "optional_positive",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "optional_negative",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "optional_latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "optional_clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "link": null
+        },
+        {
+          "name": "save_prefix",
+          "type": "STRING",
+          "link": 210,
+          "widget": {
+            "name": "save_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [
+            305
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 6
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            310
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "pipeKSampler Base",
+      "properties": {
+        "Node name for S&R": "ttN pipeKSampler",
+        "ttNnodeVersion": "1.0.5"
+      },
+      "widgets_values": [
+        "None",
+        1,
+        1,
+        "None",
+        1,
+        "disabled",
+        "Sample",
+        24,
+        6,
+        "dpmpp_2m",
+        "karras",
+        1,
+        "Save",
+        "ComfyUI",
+        1,
+        "fixed"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 90,
+      "type": "Text box",
+      "pos": [
+        500,
+        470
+      ],
+      "size": {
+        "0": 380,
+        "1": 80
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            210,
+            307,
+            308,
+            309
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Filename",
+      "properties": {
+        "Node name for S&R": "Text box"
+      },
+      "widgets_values": [
+        "img"
+      ],
+      "shape": 1
+    },
+    {
+      "id": 103,
+      "type": "Fast Groups Muter (rgthree)",
+      "pos": {
+        "0": 1300,
+        "1": 210,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 380,
+        "1": 80
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Upscaling Switch",
+      "properties": {
+        "matchColors": "",
+        "matchTitle": "",
+        "showNav": true,
+        "sort": "position",
+        "customSortAlphabet": "",
+        "toggleRestriction": "default"
+      },
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 1
+    },
+    {
+      "id": 132,
+      "type": "ttN pipeKSampler",
+      "pos": [
+        1700,
+        330
+      ],
+      "size": [
+        380,
+        830
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "link": 305
+        },
+        {
+          "name": "optional_model",
+          "type": "MODEL",
+          "link": null,
+          "slot_index": 1
+        },
+        {
+          "name": "optional_positive",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "optional_negative",
+          "type": "CONDITIONING",
+          "link": null
+        },
+        {
+          "name": "optional_latent",
+          "type": "LATENT",
+          "link": null
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "optional_clip",
+          "type": "CLIP",
+          "link": null
+        },
+        {
+          "name": "xyPlot",
+          "type": "XYPLOT",
+          "link": null
+        },
+        {
+          "name": "save_prefix",
+          "type": "STRING",
+          "link": 307,
+          "widget": {
+            "name": "save_prefix"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "PIPE_LINE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            298
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            301
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            302
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            300
+          ],
+          "shape": 3,
+          "slot_index": 5
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            299
+          ],
+          "shape": 3,
+          "slot_index": 6
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            297
+          ],
+          "shape": 3,
+          "slot_index": 7
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "pipeKSampler Latent Upscaled",
+      "properties": {
+        "Node name for S&R": "ttN pipeKSampler",
+        "ttNnodeVersion": "1.0.5"
+      },
+      "widgets_values": [
+        "None",
+        1,
+        1,
+        "nearest-exact",
+        1.5,
+        "disabled",
+        "Sample",
+        24,
+        6,
+        "dpmpp_2m",
+        "karras",
+        0.54,
+        "Save",
+        "ComfyUI",
+        0,
+        "fixed"
+      ],
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      152,
+      71,
+      0,
+      73,
+      0,
+      "IPADAPTER"
+    ],
+    [
+      153,
+      72,
+      0,
+      73,
+      1,
+      "CLIP_VISION"
+    ],
+    [
+      186,
+      74,
+      0,
+      80,
+      0,
+      "IMAGE"
+    ],
+    [
+      191,
+      80,
+      0,
+      73,
+      2,
+      "IMAGE"
+    ],
+    [
+      209,
+      88,
+      0,
+      89,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      210,
+      90,
+      0,
+      89,
+      8,
+      "STRING"
+    ],
+    [
+      211,
+      68,
+      0,
+      88,
+      3,
+      "STRING"
+    ],
+    [
+      212,
+      68,
+      1,
+      88,
+      4,
+      "STRING"
+    ],
+    [
+      213,
+      46,
+      1,
+      88,
+      6,
+      "INT"
+    ],
+    [
+      214,
+      46,
+      0,
+      88,
+      5,
+      "INT"
+    ],
+    [
+      215,
+      88,
+      1,
+      73,
+      3,
+      "MODEL"
+    ],
+    [
+      216,
+      73,
+      0,
+      89,
+      1,
+      "MODEL"
+    ],
+    [
+      289,
+      133,
+      0,
+      134,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      290,
+      141,
+      0,
+      134,
+      1,
+      "IMAGE"
+    ],
+    [
+      291,
+      137,
+      0,
+      135,
+      0,
+      "IMAGE"
+    ],
+    [
+      292,
+      138,
+      0,
+      136,
+      0,
+      "IMAGE"
+    ],
+    [
+      293,
+      144,
+      0,
+      137,
+      0,
+      "IMAGE"
+    ],
+    [
+      294,
+      134,
+      0,
+      138,
+      0,
+      "IMAGE"
+    ],
+    [
+      295,
+      136,
+      0,
+      139,
+      0,
+      "*"
+    ],
+    [
+      296,
+      144,
+      0,
+      141,
+      0,
+      "*"
+    ],
+    [
+      297,
+      132,
+      7,
+      144,
+      0,
+      "IMAGE"
+    ],
+    [
+      298,
+      132,
+      1,
+      144,
+      1,
+      "MODEL"
+    ],
+    [
+      299,
+      132,
+      6,
+      144,
+      2,
+      "CLIP"
+    ],
+    [
+      300,
+      132,
+      5,
+      144,
+      3,
+      "VAE"
+    ],
+    [
+      301,
+      132,
+      2,
+      144,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      302,
+      132,
+      3,
+      144,
+      5,
+      "CONDITIONING"
+    ],
+    [
+      303,
+      143,
+      0,
+      144,
+      6,
+      "BBOX_DETECTOR"
+    ],
+    [
+      304,
+      142,
+      0,
+      144,
+      7,
+      "SAM_MODEL"
+    ],
+    [
+      305,
+      89,
+      0,
+      132,
+      0,
+      "PIPE_LINE"
+    ],
+    [
+      307,
+      90,
+      0,
+      132,
+      8,
+      "STRING"
+    ],
+    [
+      308,
+      90,
+      0,
+      135,
+      1,
+      "STRING"
+    ],
+    [
+      309,
+      90,
+      0,
+      136,
+      1,
+      "STRING"
+    ],
+    [
+      310,
+      89,
+      7,
+      140,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Upscaling",
+      "bounding": [
+        1690,
+        -34,
+        1600,
+        1204
+      ],
+      "color": "#444",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
