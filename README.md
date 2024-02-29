@@ -9,7 +9,7 @@ The ComfyUI sidebar has a 'Load' button. Click it, navigatie to the folder and s
 # Custom Nodes:
 ## Image Size Selector
 Place the file SDXLAspectRatio.py in your …\ComfyUI\custom_nodes\ folder.
-##Style selector
+## Style selector
 First install the SDXL Prompt Styler custom node via the ComfyUI Manager.
 Then place the file sdxl_styles_base_RB.json in the …\ComfyUI\custom_nodes\sdxl_prompt_styler\ folder.
 
